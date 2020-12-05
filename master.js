@@ -26,6 +26,7 @@ CountQ(Myobj);
         document.querySelector('.next').addEventListener('click',(e)=>{
             if(Index === Myobj.length - 1){
               document.querySelector('.pop-up').classList.remove('hidden');
+            document.querySelector('.count').remove();
              
             }
            
@@ -35,14 +36,15 @@ CountQ(Myobj);
 
             e.preventDefault();
             Check(Myobj[Index]);
-            // count questions :
-CountQ(Myobj);
+           
 
 
             Index++;
             // Add questions:
 
             Add(Myobj[Index]);
+             // count questions :
+CountQ(Myobj);
             
 
 
@@ -114,8 +116,12 @@ function Check(obj){
         width += 20;
         progress.style.width = width + '%';
         progress.innerHTML = width + '%';
+          // result : 
+let score = document.querySelector('.score');
+score.innerHTML =`You have been Answer ${width}% Of The Quiz`;
 
     }
+  
 
 
 }
@@ -130,8 +136,7 @@ function CountQ(obj){
 
 
 }
-// result : 
-let score = document.querySelector('.score');
+
 
 
        
